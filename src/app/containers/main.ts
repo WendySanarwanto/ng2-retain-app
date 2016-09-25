@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Notes } from '../containers';
 import { AppBar } from '../ui';
 
 @Component({
@@ -7,7 +8,7 @@ import { AppBar } from '../ui';
         <div>
             <app-bar></app-bar>
             <main class="main">
-                content will go here
+                <notes-container></notes-container>
             </main>
         </div>
     `

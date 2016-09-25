@@ -5,8 +5,8 @@ import { HttpModule } from '@angular/http';
 import { App } from './app';
 // import { AppRoutingModule } from './app.routing'; //TODO: Create app.routing
 
-import { Main } from './containers';
-import { AppBar } from './ui';
+import { Notes, Main } from './containers';
+import { AppBar, NoteCard } from './ui';
 
 @NgModule({
     imports: [
@@ -17,7 +17,9 @@ import { AppBar } from './ui';
     declarations: [
         App,
         Main,
-        AppBar
+        AppBar,
+        Notes,
+        NoteCard
     ],
     providers: [/* TODO: Providers go here */],
     bootstrap: [App],
