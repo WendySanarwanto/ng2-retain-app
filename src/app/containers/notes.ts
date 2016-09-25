@@ -15,7 +15,7 @@ import { NoteCard } from '../ui';
     template: `
         <div class="row center-xs notes">
             <div class="col-xs-6 creator">
-                <note-creator></note-creator>
+                <note-creator (createNote)="onNoteCreated($event)"></note-creator>
             </div>
             <div class="notes col-xs-8">
                 <div class="row between-xs">
@@ -44,5 +44,10 @@ export class Notes implements OnInit {
 
     onNoteChecked(note, index){
         this.notes.splice(index,1);
+    }
+
+    onNoteCreated(newNote){
+        this.notes.push(newNote);
+        console.dir(this.notes);
     }
 }

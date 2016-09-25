@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
     selector: 'note-creator',
@@ -19,7 +19,7 @@ import { Component, OnInit } from '@angular/core';
     template: `
         <div class="note-creator shadow-2">
             <pre>{{ newNote | json }}</pre>
-            <form class="row">
+            <form class="row" (submit)="onCreateNote()" >
                 <input
                     type="text"
                     [(ngModel)]="newNote.title"
@@ -37,8 +37,7 @@ import { Component, OnInit } from '@angular/core';
                 <div class="actions col-xs-12 row between-xs">
                     <button
                     type="submit"
-                    class="btn-light"
-                    (click)="onDone()"
+                    class="btn-light"                    
                     >
                     Done
                     </button>
@@ -48,12 +47,23 @@ import { Component, OnInit } from '@angular/core';
     `
 })
 export class NoteCreator implements OnInit {
+    @Output() createNote = new EventEmitter();
     newNote = { title: '', value: '' }
     constructor() { }
 
     ngOnInit() { }
 
-    onDone(){
+    onCreateNote(){
         console.log(this.newNote);
+        // Only trigger createNode event if title & value are not empty
+        const { title, value } = this.newNote;
+        if (title && value){
+            this.createNote.emit({title, value});
+            this.reset();
+        }
+    }
+
+    reset(){
+        this.newNote = { title: '', value: '' };
     }
 }
