@@ -6,6 +6,7 @@ import { App } from './app';
 // import { AppRoutingModule } from './app.routing'; //TODO: Create app.routing
 
 import { Main } from './containers';
+import { AppBar } from './ui';
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import { Main } from './containers';
     ],
     declarations: [
         App,
-        Main
+        Main,
+        AppBar
     ],
     providers: [/* TODO: Providers go here */],
     bootstrap: [App],
