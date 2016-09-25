@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center">
   <a href="http://courses.angularclass.com/courses/angular-2-fundamentals" target="_blank">
     <img alt="Angular 2 Fundamentals" src="https://res.cloudinary.com/angularclass/image/upload/v1468640978/courses-logo-large.png">
@@ -58,3 +59,7 @@ This repo is designed to accompany the free [Angular 2 Fundamentals course](http
 
 [![Angular 2 Fundamentals](https://cloud.githubusercontent.com/assets/1016365/17240276/33ec0830-551f-11e6-94f8-a69846e322f9.png)](http://www.youtube.com/watch?v=ANM1xv0uJ7g)
 
+=======
+# ng2-retain-app
+A simple sticky notes app which is built on top of Angular 2. It is forked from Angular Class video tutorial.
+>>>>>>> 37d4f8ad6798c4aee99dcc6acdbf973db78e1e87
