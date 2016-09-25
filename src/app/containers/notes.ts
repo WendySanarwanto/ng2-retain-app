@@ -26,7 +26,7 @@ import { NoteCard } from '../ui';
         `
 })
 export class Notes implements OnInit {
-    note= { title: 'new note', value: 'note here'};
+    note= { title: 'Chores', value: `Don't forget to clean up`, color: '#CCFF90'};
 
     constructor() { }
 
