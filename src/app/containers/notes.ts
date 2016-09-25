@@ -10,6 +10,10 @@ import { NoteCard } from '../ui';
 
         .creator{
             margin-bottom: 40px;
+        }
+
+        .note-card{
+            margin-top: 15px;
         }     
     `],
     template: `
@@ -18,9 +22,9 @@ import { NoteCard } from '../ui';
                 <note-creator (createNote)="onNoteCreated($event)"></note-creator>
             </div>
             <div class="notes col-xs-8">
-                <div class="row between-xs">
+                <div class="row between-xs ">
                     <note-card 
-                        class="col-xs-4" 
+                        class="col-xs-4 note-card" 
                         [note]="note"
                         *ngFor="let note of notes; let i = index"
                         (checked)="onNoteChecked($event, i)"

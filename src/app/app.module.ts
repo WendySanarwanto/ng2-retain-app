@@ -7,7 +7,7 @@ import { App } from './app';
 // import { AppRoutingModule } from './app.routing'; //TODO: Create app.routing
 
 import { Notes, Main } from './containers';
-import { AppBar, NoteCard, NoteCreator } from './ui';
+import { AppBar, ColorPicker, NoteCard, NoteCreator } from './ui';
 
 @NgModule({
     imports: [
@@ -20,6 +20,7 @@ import { AppBar, NoteCard, NoteCreator } from './ui';
         App,
         Main,
         AppBar,
+        ColorPicker,
         Notes,
         NoteCard,
         NoteCreator
