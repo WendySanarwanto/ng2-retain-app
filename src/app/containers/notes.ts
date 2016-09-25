@@ -15,7 +15,7 @@ import { NoteCard } from '../ui';
     template: `
         <div class="row center-xs notes">
             <div class="col-xs-6 creator">
-                note creator here
+                <note-creator></note-creator>
             </div>
             <div class="notes col-xs-8">
                 <div class="row between-xs">
