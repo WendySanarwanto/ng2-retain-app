@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "webpack --config webpack.spec.ts --progress --color && karma start",
-    "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src"
+    "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
+    "api": "angularclass-server --api retain --port 3500"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +22,7 @@
     "core-js": "^2.4.1",
     "lodash": "^4.16.1",
     "rxjs": "^5.0.0-beta.12",
+    "typescript": "^2.0.3",
     "zone.js": "^0.6.25"
   },
   "devDependencies": {
@@ -37,7 +39,7 @@
     "raw-loader": "^0.5.1",
     "to-string-loader": "^1.1.4",
     "ts-helpers": "^1.1.1",
-    "typescript": "^2.0.2",
+    "typescript": "^2.0.3",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }

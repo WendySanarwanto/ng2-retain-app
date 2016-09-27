@@ -9,6 +9,8 @@ import { App } from './app';
 import { Notes, Main } from './containers';
 import { AppBar, ColorPicker, NoteCard, NoteCreator } from './ui';
 
+import { serviceProviders } from './services';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -25,7 +27,9 @@ import { AppBar, ColorPicker, NoteCard, NoteCreator } from './ui';
         NoteCard,
         NoteCreator
     ],
-    providers: [/* TODO: Providers go here */],
+    providers: [
+        serviceProviders
+    ],
     bootstrap: [App],
 })
 export class AppModule { }
