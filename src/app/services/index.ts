@@ -1,4 +1,5 @@
 export { ApiService } from './api';
+export { NotesService } from './notes';
 
 import * as services from '.'; 
 

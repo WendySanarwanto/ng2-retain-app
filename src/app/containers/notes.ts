@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NoteCard } from '../ui';
-
+import { NotesService } from '../services';
 @Component({
     selector: 'notes-container',
     styles: [`
@@ -37,21 +37,28 @@ import { NoteCard } from '../ui';
 })
 export class Notes implements OnInit {
     notes= [
-        { title: 'Chores', value: `Don't forget to clean up`, color: '#CCFF90'},
-        { title: 'Food', value: `Prepare tonight's meal, please!`, color: '#A7FFEB'},
-        { title: 'Shipping Number', value: `#234654hhd88`, color: '#FF8A80'}
+        // { title: 'Chores', value: `Don't forget to clean up`, color: '#CCFF90'},
+        // { title: 'Food', value: `Prepare tonight's meal, please!`, color: '#A7FFEB'},
+        // { title: 'Shipping Number', value: `#234654hhd88`, color: '#FF8A80'}
     ];
     
-    constructor() { }
+    constructor(private _notesService: NotesService) {
+        this._notesService.getNotes()
+            .subscribe(res=>this.notes=res.data); 
+    }
 
     ngOnInit() { }
 
     onNoteChecked(note, index){
-        this.notes.splice(index,1);
+        this._notesService.completeNote(note)
+            .subscribe(note=>{
+                const noteIndex = this.notes.findIndex(localNote => localNote.id === note.id);
+                this.notes.splice(noteIndex,1);
+            });
     }
 
     onNoteCreated(newNote){
-        this.notes.push(newNote);
-        console.dir(this.notes);
+        this._notesService.createNote(newNote)
+            .subscribe(note=> this.notes.push(note));
     }
 }
