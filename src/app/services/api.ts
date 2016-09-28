@@ -8,7 +8,7 @@ import 'rxjs/add/observable/throw';
 export class ApiService {
     headers: Headers = new Headers({
         'Content-Type': 'application/json',
-        Accept: 'application/json'
+        'Accept': 'application/json'
     });
     api_url: string = 'http://localhost:3500';
     
@@ -39,7 +39,7 @@ export class ApiService {
     post(path: string, body):Observable<any> { 
         return this._http.post(
             `${this.api_url}${path}`,
-            JSON.stringify(body),
+            body,
             this.headers
         )
         .map(this.checkError)
